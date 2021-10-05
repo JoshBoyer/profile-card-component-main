@@ -1,0 +1,102 @@
+//Colors
+$clr-white: hsl(0, 0, 100%);
+$clr-black: hsl(0, 0, 0);
+$clr-darkCyan: hsl(185, 75%, 39%);
+$clr-darkBlue: hsl(229, 23%, 23%);
+$clr-grayBlue: hsl(227, 10%, 46%);
+
+//Fonts
+$fontFamily: "Kumbh Sans", sans-serif;
+
+//Breakpoints
+@mixin md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media screen and (min-width: 998px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+//Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+span {
+  font-weight: normal;
+  color: $clr-grayBlue;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $fontFamily;
+  font-size: 1.8rem;
+  background-color: $clr-darkCyan;
+  overflow: hidden;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: url("/images/bg-pattern-top.svg");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-100%) translateY(-90%);
+    z-index: -1;
+  }
+  &::after {
+    content: url("/images/bg-pattern-bottom.svg");
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-5%) translateY(1%);
+    z-index: -1;
+  }
+}
+
+h1,
+h2 {
+  color: $clr-black;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3.6rem;
+}
